@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<h3>Branch Names</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="branchList:${branches}">
+<td th:text="${branchList.title}"></td>
+<td>
+<a th:href="@{'/branch/edit/'+${branchList.code}}">Edit</a>
+</td>
+<td>
+<a th:href="@{'/branch/delete/'+${branchList.code}}">Delete</a>
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

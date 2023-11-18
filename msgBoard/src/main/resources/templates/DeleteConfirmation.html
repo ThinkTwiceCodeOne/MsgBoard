@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(()=>{
+$('#delete').click(()=>{
+$('#deleteForm').attr('action','/confirmDelete');
+$('#deleteForm').attr('method','POST');
+});
+$('#cancel').click(()=>{
+$('#deleteForm').attr('action','/branches');
+$('#deleteForm').attr('method','GET');
+});
+});
+</script>
+</head>
+<body>
+<form id='deleteForm'>
+<input type='hidden' name='code' th:value="${code}"/>
+<input name='title' th:value="${title}" readonly/>
+<button type='submit' id='delete' >Delete</button>
+<button type='submit' id='cancel'>Cancel</button>
+</form>
+</form>
+</body>
+</html>
